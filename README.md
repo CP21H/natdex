@@ -1,0 +1,3 @@
+# Natdex
+
+Natdex is a United States National Park Interactive Map service built around <img src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" width="15px"/> **Tailwind** as the front-end, and a <img src="https://user-images.githubusercontent.com/25181517/183423775-2276e25d-d43d-4e58-890b-edbc88e915f7.png" width="15px"/> **Flask** with <img src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/82df4543-236b-4e45-9604-5434e3faab17" width="15px"/> **SQLite3** backend. Natdex was created to fill the void between USA bucket list bottles and the national parks themsselves, providing an online method of tracking your national park adventures! 
