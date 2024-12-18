@@ -1,4 +1,22 @@
-@tailwind components;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", serif;
+}
 
-@tailwind utilities;
+body {
+    background-image: url("/static/images/test3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.main {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    width: 100%;
+}
