@@ -61,17 +61,18 @@ def logout():
 ##############################
 @app.route('/')
 def index():
-    if 'username' in session:
-        with sqlite3.connect('database.db') as conn:
-            cursor = conn.cursor()
-            cursor.execute("SELECT username FROM users WHERE username = ?", (session['username'],))
-            user = cursor.fetchone()
-            if user:
-                return render_template('index.html', username=session['username'])
-            else:
-                return redirect(url_for('logout'))
-    else:
-        return redirect(url_for('login'))
+    #if 'username' in session:
+    #    with sqlite3.connect('database.db') as conn:
+    #        cursor = conn.cursor()
+    #        cursor.execute("SELECT username FROM users WHERE username = ?", (session['username'],))
+    #        user = cursor.fetchone()
+    #        if user:
+    #            return render_template('index.html', username=session['username'])
+    #        else:
+    #            return redirect(url_for('logout'))
+    #else:
+    #    return redirect(url_for('login'))
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
