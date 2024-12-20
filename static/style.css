@@ -13,23 +13,25 @@ header a {
 
 header {
     padding: 0 20px;
-    background-color: rgba(0,0,0,0.78);
-    height: 50px;
+    height: 75px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #brand {
+    position: absolute;
+    left: 7.5px;
     margin-top: 7.5px;
-    height: 35px;
-    width: 35px;
+    height: 60px;
+    width: 60px;
 }
 
-#brand-text {
-    color: white;
-    margin-top: 7.5px;
-    font-weight: bold;
-    font-size: 14px;
+.brand-text {
+    position: absolute;
+    left: 75px;
+    margin-top: 17px;
+    color: #be905d;
+    font-size: 35px;
 }
 
 ul {
@@ -41,30 +43,46 @@ ul {
 }
 
 ul a {
-    color: white;
+    position: relative;
+    color: #a87040;
+    font-weight: 400;
+}
+
+ul a::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #2a5757;
+    transition: width .2s;
+}
+
+ul a:hover:after {
+    width: 100%;
 }
 
 ul li {
     padding: 5px;
-    margin-left: 10px;
-}
-
-ul li:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
+    margin-left: 50px;
 }
 
 #login {
-    border-radius: 5px;
+    position: absolute;
+    right: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 25px;
+    background-color: rgba(235,224,206,0.75);
     padding: 5px 8px;
-}
-
-#login {
-    border: 1px solid #498afb;
+    width: 145px;
+    height: 40px;
+    cursor: pointer;
 }
 
 #login a {
-    color: #498afb;
+    color: #a87040;
 }
 
 #hamburger-icon {
@@ -116,12 +134,23 @@ ul li:hover {
 }
 
 @media only screen and (max-width: 600px) {
+    header {
+        justify-content: right;
+    }
+
     header nav {
         display: none;
     }
 
     #hamburger-icon {
         display: block;
+    }
+
+    #login {
+        position: relative;
+        background: none;
+        right: 0;
+        height: 25px;
     }
 }
 
