@@ -7,6 +7,10 @@
     font-family: "League Spartan", serif;
 }
 
+/*
+### INDEX.HTML
+ */
+
 header a {
     text-decoration: none;
 }
@@ -63,6 +67,10 @@ ul a:hover:after {
     width: 100%;
 }
 
+#login a:hover:after {
+    width: 0;
+}
+
 ul li {
     padding: 5px;
     margin-left: 50px;
@@ -82,7 +90,11 @@ ul li {
 }
 
 #login a {
+    display: grid;
+    place-items: center;
     color: #a87040;
+    height: 120%;
+    width: 110%;
 }
 
 #hamburger-icon {
@@ -151,6 +163,11 @@ ul li {
         background: none;
         right: 0;
         height: 25px;
+        width: 10%;
+    }
+
+    #login a:hover:after {
+        width: 100%;
     }
 }
 
@@ -169,3 +186,8 @@ body {
     font-size: 25px;
     width: 100%;
 }
+
+/*
+### LOGIN.HTML
+ */
+
