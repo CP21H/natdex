@@ -16,6 +16,7 @@ def init_db():
             userID INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT, 
             password TEXT);''')
+        conn.commit()
 
 init_db()
 
@@ -52,6 +53,35 @@ def login():
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
+
+
+##############################
+#                            #
+#       SIGN UP              #
+#                            #
+##############################
+@app.route('/signup.html', methods=['GET', 'POST'])
+def signup():
+    messages = []
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # VALIDATION CHECKING
+        if not username:
+            messages.append("Username invalid")
+        if not password:
+            messages.append("Provide a password")
+
+        # MESSAGES LIST = EMPTY, ZERO ERRORS
+        if not messages:
+            with sqlite3.connect('database.db') as conn:
+                cursor = conn.cursor()
+                cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+                conn.commit()
+            messages.append("User created successfully")
+
+    return render_template('signup.html', messages=messages)
 
 
 ##############################

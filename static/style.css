@@ -191,3 +191,61 @@ body {
 ### LOGIN.HTML
  */
 
+.login-body {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    align-items: center;
+    place-items: center;
+}
+
+form {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    width: 450px;
+    height: 600px;
+    border-style: solid;
+    border-color: #e0e2e7;
+    border-width: 2px;
+    background: white;
+    border-radius: 10px;
+}
+
+input:not([type="submit"]) {
+    font-weight: 450;
+    font-size: 100%;
+    text-indent: 5%;
+    height: 35%;
+    width: 70%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e2e7;
+    border-radius: 5px;
+}
+
+input:is([type="submit"]) {
+    height: 35%;
+    width: 70%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e2e7;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline-color: #72bbbb;
+}
+
+/*
+### SIGNUP.HTML
+ */
+.signup-body {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    align-items: center;
+    place-items: center;
+}

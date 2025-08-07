@@ -33,15 +33,19 @@
         </header>
 
         <!-- SIGN-UP / LOGIN FORM SWITCHING -->
-        <div class="login-body">
+        <div class="signup-body">
             <form method="POST">
-                <h1>Welcome back</h1>
+                <h1>Sign up</h1>
                 <input type="text" name="username" placeholder="Username">
                 <br>
                 <input type="password" name="password" placeholder="Password">
                 <br>
-                <input type="submit" value="Log in">
-                <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+                <input type="submit" value="Sign up">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
             </form>
         </div>
         <!-- SIGN-UP / LOGIN FORM SWITCHING -->
