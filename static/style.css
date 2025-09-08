@@ -201,11 +201,10 @@ body {
 }
 
 form {
-    display: grid;
-    place-items: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     width: 450px;
-    height: 600px;
+    height: 550px;
     border-style: solid;
     border-color: #e0e2e7;
     border-width: 2px;
@@ -213,12 +212,32 @@ form {
     border-radius: 10px;
 }
 
+form h1 {
+    margin-left: 55px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.details {
+    color: gray;
+    margin-left: 55px;
+    margin-top: 55px;
+}
+
+.form-inner {
+    display: grid;
+    place-items: center;
+    width: 350px;
+    height: 250px;
+    margin-left: 55px;
+}
+
 input:not([type="submit"]) {
     font-weight: 450;
     font-size: 100%;
     text-indent: 5%;
-    height: 35%;
-    width: 70%;
+    height: 45px;
+    width: 340px;
     border-width: 1px;
     border-style: solid;
     border-color: #e0e2e7;
@@ -226,8 +245,8 @@ input:not([type="submit"]) {
 }
 
 input:is([type="submit"]) {
-    height: 35%;
-    width: 70%;
+    height: 35px;
+    width: 340px;
     border-width: 1px;
     border-style: solid;
     border-color: #e0e2e7;

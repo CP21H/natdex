@@ -35,12 +35,17 @@
         <!-- SIGN-UP / LOGIN FORM SWITCHING -->
         <div class="signup-body">
             <form method="POST">
+                <p class="details">Create your account</p>
                 <h1>Sign up</h1>
-                <input type="text" name="username" placeholder="Username">
-                <br>
-                <input type="password" name="password" placeholder="Password">
-                <br>
-                <input type="submit" value="Sign up">
+                <div class="form-inner">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <!-- ADD PASSWORD VALIDATION / CONFIRMATION WHEN CREATING ACCOUNT -->
+                    <input type="password" name="password-conffirm" placeholder="Confirm Password">
+                    <!-- ADD AN ACCEPT TERMS OF SERVICE AND PRIVACY POLICY -->
+
+                    <input type="submit" value="Sign up">
+                </div>
                 {% if messages %}
                     {% for message in messages %}
                         <p>{{ message }}</p>

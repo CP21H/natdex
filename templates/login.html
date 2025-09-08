@@ -35,13 +35,15 @@
         <!-- SIGN-UP / LOGIN FORM SWITCHING -->
         <div class="login-body">
             <form method="POST">
+                <p class="details">Please enter your details</p>
                 <h1>Welcome back</h1>
-                <input type="text" name="username" placeholder="Username">
-                <br>
-                <input type="password" name="password" placeholder="Password">
-                <br>
-                <input type="submit" value="Log in">
-                <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+                <div class="form-inner">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit" value="Log in">
+                    <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+                    <!-- Should add a messages sections here from signup.html to handle login failure -->
+                </div>
             </form>
         </div>
         <!-- SIGN-UP / LOGIN FORM SWITCHING -->
