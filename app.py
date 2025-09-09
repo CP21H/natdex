@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, session
 import sqlite3
 
 app = Flask(__name__)
+app.secret_key = "testing_key"
 
 ##############################
 #                            #
@@ -42,8 +43,8 @@ def login():
                 user = cursor.fetchone()
 
                 if user:
-                    session['username'] = user[1]
-                    return redirect(url_for('index'))
+                    session['username'] = user[0]
+                    return render_template('index.html')
                 else:
                     messages.append("Invalid username and/or password")
 
@@ -66,12 +67,22 @@ def signup():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        password_confirm = request.form['password-confirm']
 
         # VALIDATION CHECKING
         if not username:
             messages.append("Username invalid")
         if not password:
             messages.append("Provide a password")
+        if password != password_confirm:
+            messages.append("Passwords do not match")
+        # CHECK IF THE USERNAME IS IN USE ALREADY
+        with sqlite3.connect('database.db') as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT 1 FROM users WHERE username = ?", (username,))
+            user_check = cursor.fetchone()
+            if user_check:
+                messages.append("Username already exists")
 
         # MESSAGES LIST = EMPTY, ZERO ERRORS
         if not messages:
@@ -79,7 +90,7 @@ def signup():
                 cursor = conn.cursor()
                 cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
                 conn.commit()
-            messages.append("User created successfully")
+            messages.append("Account created! Please log in to continue.")
 
     return render_template('signup.html', messages=messages)
 

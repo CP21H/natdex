@@ -145,7 +145,7 @@ ul li {
   margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     header {
         justify-content: right;
     }
@@ -161,13 +161,22 @@ ul li {
     #login {
         position: relative;
         background: none;
-        right: 0;
         height: 25px;
         width: 10%;
+        padding: 0;
+    }
+
+    #login a {
+        padding-left: 52px;
     }
 
     #login a:hover:after {
         width: 100%;
+    }
+
+    .mobile-menu li {
+        font-size: 5vw;
+        margin-bottom: 10px;
     }
 }
 
