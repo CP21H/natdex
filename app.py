@@ -30,6 +30,7 @@ init_db()
 @app.route('/login.html', methods=['GET', 'POST'])
 def login():
     messages = []
+    logged_in = False
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -44,15 +45,27 @@ def login():
 
                 if user:
                     session['username'] = user[0]
-                    return render_template('index.html')
+                    logged_in = True
+                    session['logged_in'] = True
+                    session.permanent = False
+                    return render_template('index.html', logged_in=logged_in, username=session['username'])
                 else:
                     messages.append("Invalid username and/or password")
 
     return render_template('login.html', messages=messages)
 
-@app.route('/logout')
+
+@app.route('/logout.html', methods=['GET', 'POST'])
 def logout():
+    logged_in = session.get('logged_in')
+    username = session.get('username')
+    return render_template('logout.html', logged_in=logged_in, username=username)
+
+
+@app.route('logout_confirm')
+def logout_confirm():
     session.pop('username', None)
+    session['logged_in'] = False
     return redirect(url_for('login'))
 
 
@@ -102,18 +115,9 @@ def signup():
 ##############################
 @app.route('/')
 def index():
-    #if 'username' in session:
-    #    with sqlite3.connect('database.db') as conn:
-    #        cursor = conn.cursor()
-    #        cursor.execute("SELECT username FROM users WHERE username = ?", (session['username'],))
-    #        user = cursor.fetchone()
-    #        if user:
-    #            return render_template('index.html', username=session['username'])
-    #        else:
-    #            return redirect(url_for('logout'))
-    #else:
-    #    return redirect(url_for('login'))
-    return render_template('index.html')
+    logged_in = session.get('logged_in')
+    username = session.get('username')
+    return render_template('index.html', logged_in=logged_in, username=username)
 
 
 if __name__ == '__main__':

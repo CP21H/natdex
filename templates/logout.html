@@ -38,11 +38,23 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Support</a></li>
-                    <!-- MAKE IT SO THAT LOGIN ONLY SHOWS IF YOU AREN'T LOGGED IN IF YOU ARE LOGGED IN, IT SHOULD SHOW AN ACCOUNT SECTION -->
                     <li id="login"><a href="/login.html">Login</a></li>
                 </ul>
             </div>
         </header>
+
+        <!-- LOGOUT FORM -->
+        <div class="login-body">
+            <form method="POST">
+                <p class="details">Don't stop adventuring!</p>
+                <h1>Goodbye!</h1>
+                <div class="form-inner">
+                    <p>Signing out of <strong>{{ username }}</strong></p>
+                    <!-- RED BUTTON THAT SIGNS THE USER OUT / LOGS THEM OUT -->
+                </div>
+            </form>
+        </div>
+        <!-- LOGOUT FORM -->
     <script src="../static/index.js"></script>
     </body>
 </html>
