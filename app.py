@@ -62,7 +62,7 @@ def logout():
     return render_template('logout.html', logged_in=logged_in, username=username)
 
 
-@app.route('logout_confirm')
+@app.route('/logout_confirm')
 def logout_confirm():
     session.pop('username', None)
     session['logged_in'] = False

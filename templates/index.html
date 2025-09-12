@@ -18,7 +18,10 @@
                     <li><a href="#">Support</a></li>
                     {% if logged_in %}
                         <li class="account">
-                            <span>{{ username }}</span>
+                            <span>
+                                <img src="../static/images/user.png" class="account-img">
+                                {{ username }}
+                            </span>
                             <ul class="account-dropdown">
                                 <li><a href="#">Profile</a></li>
                                 <li><a href="#">Settings</a></li>

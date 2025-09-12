@@ -197,16 +197,21 @@ body {
 }
 
 .account > span {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns: 10px auto;
+    grid-gap: 15px;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    background: #333;
+    background: rgba(42, 87, 87, 0.5);
     color: #fff;
     border-radius: 4px;
 }
 
 .account-dropdown {
     position: absolute;
-    background: #444;
+    background: rgba(42, 87, 87, 0.5);
     min-width: 150px;
     height: 130px;
     border-radius: 4px;
@@ -228,6 +233,11 @@ body {
 /* Show on hover (or click with JS if you prefer) */
 .account:hover .account-dropdown {
     display: block;
+}
+
+.account-img {
+    width: 20px;
+    height: 20px;
 }
 
 
@@ -295,6 +305,7 @@ input:is([type="submit"]) {
     border-style: solid;
     border-color: #e0e2e7;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 input:focus {
@@ -311,4 +322,45 @@ input:focus {
     display: grid;
     align-items: center;
     place-items: center;
+}
+
+.error-messages {
+    display: grid;
+    place-items: center;
+    gap: 15px;
+    color: red;
+}
+
+/*
+### LOGOUT.HTML
+ */
+
+.signout-confirm {
+    display: grid;
+    place-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #f1f1f1;
+    color: #cb2222;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bdbdbd;
+    cursor: pointer;
+    margin-bottom: 85px;
+}
+
+.logout-button {
+    text-decoration: none;
+}
+
+.signout-message {
+    display: grid;
+    place-items: center;
+    width: 200px;
+    height: 70px;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 10px;
+    border-width: 1px;
 }
